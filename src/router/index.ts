@@ -2,6 +2,7 @@ import * as VueRouter from "vue-router";
 import store from "@/store";
 // 使用 .meta.globEager 导入多个模块 —— vite 新特性
 const routeModules = import.meta.globEager("../apps/**/routes/index.ts");
+
 const routes = [
     {
         path: "/",
@@ -19,6 +20,7 @@ const routes = [
         component: () => import("../views/404.vue")
     }
 ];
+
 // 将路由模块遍历解构
 for (const element in routeModules) {
     let routeModule = routeModules[element];

@@ -1,23 +1,27 @@
-<script setup>
-import {Message} from '@arco-design/web-vue';
-import {IconCalendar, IconCaretLeft, IconCaretRight, IconHome,} from '@arco-design/web-vue/es/icon';
-import {ref} from "vue";
+<script setup lang="ts">
+import { Message } from "@arco-design/web-vue";
+import {
+  IconCalendar,
+  IconCaretLeft,
+  IconCaretRight,
+  IconHome,
+} from "@arco-design/web-vue/es/icon";
+import { ref } from "vue";
 
-const onClickMenuItem = (key) => {
-  Message.info({content: `You select ${key}`, showIcon: true});
-}
-const appName = ref('主页')
-
+const onClickMenuItem = (key: string) => {
+  Message.info({ content: `You select ${key}`, showIcon: true });
+};
+const appName = ref("主页");
 </script>
 <template>
   <a-layout class="layout-demo">
     <a-layout-sider breakpoint="xl" collapsible>
-      <div class="logo"/>
+      <div class="logo" />
       <a-menu
-          :default-open-keys="['1']"
-          :default-selected-keys="['0_3']"
-          :style="{ width: '100%' }"
-          @menu-item-click="onClickMenuItem"
+        :default-open-keys="['1']"
+        :default-selected-keys="['0_3']"
+        :style="{ width: '100%' }"
+        @menu-item-click="onClickMenuItem"
       >
         <a-menu-item key="0_1" disabled>
           <IconHome></IconHome>
@@ -72,7 +76,9 @@ const appName = ref('主页')
       </a-breadcrumb>
       <a-layout>
         <a-layout-content>Content</a-layout-content>
-        <a-layout-footer class="text-[#fff]">© 2021 Xav1erSue，All rights reserved.</a-layout-footer>
+        <a-layout-footer class="text-[#fff]"
+          >© 2021 Xav1erSue，All rights reserved.</a-layout-footer
+        >
       </a-layout>
     </a-layout>
   </a-layout>
